@@ -2,16 +2,14 @@
 
 namespace App\Frontend\Controllers;
 
+use App\Core\Models\AppUser;
+
 class IndexController extends BaseController
 {
     public function indexAction()
     {
-        $db = $this->di->get('db');
-        $data = $db->query('select * from AppUsers')->fetchAll(\PDO::FETCH_OBJ);
+        $data =  AppUser::findFirst('id=2');
 
-        var_dump($data);
-        die();
-
-        $this->view->setVar('data', $data);
+        var_dump($data->id);
     }
 }
