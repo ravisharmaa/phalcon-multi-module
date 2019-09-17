@@ -1,0 +1,9 @@
+node_modules/
+node_modules/*
+vendor/*
+vendor/
+cache/volt/*
+.idea/
+.php_cs.cache
+mix-manifest.json
+package-lock.json

@@ -1,0 +1,8 @@
+{
+
+    "require": {
+        "phalcon/incubator": "^3.4",
+        "phalcon/ide-stubs": "^3.4",
+        "twig/twig": "^2.11"
+    }
+}
