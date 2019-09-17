@@ -23,5 +23,14 @@ return new Phalcon\Config([
         'cache' => [
             'dir' => __DIR__.'/../cache/volt/'
         ]
-    ]
+    ],
+
+    'database' => [
+        'adapter' => 'MSSQL',
+        'pdoType'=> 'dblib',
+        'host' => '10.0.1.62',
+        'username' => 'sa',
+        'password' => 'password',
+        'dbname' => 'ivisit',
+    ],
 ]);

@@ -1,5 +1,6 @@
 <?php
 
+use MSSQL\Adapter\MssqlAdapter;
 use Phalcon\Mvc\View\Engine\Volt;
 
 $dependencyInjector['session'] = function () use ($config) {
@@ -23,4 +24,16 @@ $dependencyInjector['voltService'] = function ($view, $dependencyInjector) use (
     ]);
 
     return $volt;
+};
+
+$dependencyInjector['db'] = function () use ($config) {
+    return new MssqlAdapter([
+        'host' => $config->database->host,
+        'port' => 1433,
+        'username' => $config->database->username,
+        'password' => $config->database->password,
+        'dbname' => $config->database->dbname,
+        'pdoType' => $config->database->pdoType,
+        'dialectClass' => '\MSSQL\Dialect\MssqlDialect',
+    ]);
 };
