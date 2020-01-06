@@ -8,8 +8,12 @@ class IndexController extends BaseController
 {
     public function indexAction()
     {
-        $data =  AppUser::findFirst('id=2');
+        $users = AppUser::find();
 
-        var_dump($data->id);
+        foreach ($users as $user) {
+            print_r($user);
+        }
+
+        $this->view->disable();
     }
 }

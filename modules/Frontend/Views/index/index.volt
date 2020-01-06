@@ -1,7 +1,9 @@
 {% extends 'layout.volt' %}
 
 {% block body %}
-    {{ data }}
+    {% for user in users %}
+        {{ user.name }}
+    {% endfor %}
     <demo-component></demo-component>
 {% endblock %}
 

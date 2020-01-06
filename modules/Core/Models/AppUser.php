@@ -18,6 +18,7 @@ class AppUser extends Base
     {
         return [
             'UserId'   => 'id',
+            'UserName' => 'name'
         ];
     }
 

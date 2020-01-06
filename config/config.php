@@ -1,9 +1,8 @@
 <?php
 
 return new Phalcon\Config([
-
     'application' => [
-        'name' => 'Learning Phalcon'
+        'name' => 'Learning Phalcon',
     ],
 
     'root_dir' => __DIR__.'/../',
@@ -16,18 +15,18 @@ return new Phalcon\Config([
     'session' => [
         'unique_id' => 'learning_phalcon',
         'name' => 'learning_phalcon',
-        'path' => 'tcp://127.0.0.1:6379?weight=1'
+        'path' => 'tcp://127.0.0.1:6379?weight=1',
     ],
 
     'view' => [
         'cache' => [
-            'dir' => __DIR__.'/../cache/volt/'
-        ]
+            'dir' => __DIR__.'/../cache/volt/',
+        ],
     ],
 
     'database' => [
-        'adapter' => 'MSSQL',
-        'pdoType'=> 'dblib',
+        'adapter' => '\MSSQL\Adapter\MssqlAdapter',
+        'pdoType' => 'dblib',
         'host' => '10.0.1.62',
         'username' => 'sa',
         'password' => 'password',

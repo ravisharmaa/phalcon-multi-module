@@ -655,7 +655,11 @@ class MssqlDialect extends Dialect
            $sql = $sql . "AND TABLE_SCHEMA = '$schemaName'";
            }
          */
-        $sql = "exec sp_columns [$table], [$schema]";
+        if ($schema) {
+            $sql = "exec sp_columns [$table], [$schema]";
+        }
+
+        $sql = "exec sp_columns [$table]";
 
         return $sql;
     }
